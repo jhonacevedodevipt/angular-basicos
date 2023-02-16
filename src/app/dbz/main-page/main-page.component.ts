@@ -1,44 +1,25 @@
 import { Component } from '@angular/core';
-
-interface Character {
-  name: string;
-  power: number;
-}
-
+import { Character } from '../interfaces/dbz.interface';
 @Component({
   selector: 'app-main-page',
   templateUrl: './main-page.component.html',
   styleUrls: ['./main-page.component.css'],
 })
 export class MainPageComponent {
-
-  character: Character[] = [
+  // these characters are sent to characters.component.html through the decorator @Input
+  characters: Character[] = [
     {
-      name: 'Goku',
-      power: 15000
+      nameC: 'Goku',
+      power: 15000,
     },
     {
-      name: 'Vegeta',
-      power: 7500
-    }
+      nameC: 'Vegeta',
+      power: 7500,
+    },
   ];
 
   new: Character = {
-    name: 'Trunks',
-    power: 14000,
-  };
-
-  add() {
-    if (this.new.name.trim().length === 0) {
-      return;
-    }
-    console.log(this.new);
-
-
-    this.characters.push( this.new)
-    this.new = {
-      name: '',
-      power: 0
-    }
+    nameC: 'Master Roshi',
+    power: 1000
   }
 }
