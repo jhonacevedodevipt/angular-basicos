@@ -2,12 +2,10 @@
 <hr />
 <div class="row">
   <div class="col">
-    <app-characters [characters]="characters"></app-characters>
+    <app-characters></app-characters>
   </div>
   <div class="col">
-    <app-add
-      [characters]="characters"
-      [new]="new"
-    ></app-add>
+    <!-- communication between components -->
+    <app-add [new]="new"></app-add>
   </div>
 </div>
